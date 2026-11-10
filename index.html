@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IT portfolio of Vladyslav Kurylenko — IT support, networking, Linux, infrastructure and cybersecurity projects.">
+
+    <title>Vladyslav Kurylenko | IT Portfolio</title>
+
+    <style>
+        /* GENERAL SETTINGS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101827;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #93c5fd;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+        header {
+            background: #111c2e;
+            border-bottom: 1px solid #29364a;
+            padding: 18px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 90px 0 75px;
+        }
+
+        .hero-label {
+            color: #60a5fa;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        h1 {
+            font-size: clamp(36px, 6vw, 58px);
+            line-height: 1.2;
+            margin: 15px 0;
+            color: white;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #aab7ca;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 11px 22px;
+            background: #2563eb;
+            color: white;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+            color: white;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 65px 0;
+            border-top: 1px solid #29364a;
+        }
+
+        h2 {
+            font-size: 29px;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .section-intro {
+            color: #aab7ca;
+            margin-bottom: 25px;
+            max-width: 750px;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #1e2b40;
+            border: 1px solid #34445d;
+            padding: 7px 14px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+
+        /* PROJECT CARDS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #172337;
+            border: 1px solid #293b55;
+            border-radius: 9px;
+            padding: 23px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #60a5fa;
+        }
+
+        .project-card h3 {
+            color: #93c5fd;
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .project-card p {
+            color: #aab7ca;
+            font-size: 14px;
+        }
+
+        .tech {
+            margin-top: 15px;
+            color: #60a5fa;
+            font-size: 12px;
+        }
+
+        /* EDUCATION AND CERTIFICATIONS */
+        .info-card {
+            background: #172337;
+            border-left: 3px solid #3b82f6;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .info-card h3 {
+            color: white;
+            font-size: 17px;
+        }
+
+        .info-card p {
+            color: #aab7ca;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background: #111c2e;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">VK. | IT Portfolio</div>
+
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- INTRODUCTION -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-label">IT Support | Networking | Infrastructure</div>
+
+                <h1>Vladyslav Kurylenko</h1>
+
+                <p>
+                    CompTIA A+ and Network+ certified IT professional
+                    with hands-on experience in hardware troubleshooting,
+                    Windows and Linux administration, network infrastructure,
+                    and self-hosted services.
+                    Currently pursuing an AAS in Cybersecurity.
+                </p>
+
+                <a class="button" href="#projects">Explore My Projects</a>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+
+                <p class="section-intro">
+                    I enjoy working with computer hardware, operating systems,
+                    networking and infrastructure. My experience comes from
+                    independent home-lab projects, technical training and
+                    collaborative projects.
+
+                    I focus on practical problem-solving, learning new
+                    technologies and building systems that work in real
+                    environments.
+                </p>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <div class="container">
+                <h2>Technical Skills</h2>
+
+                <p class="section-intro">
+                    Technologies and tools I have worked with through
+                    projects, coursework and technical training.
+                </p>
+
+                <div class="skills">
+                    <span class="skill">Windows 10/11</span>
+                    <span class="skill">Linux Mint</span>
+                    <span class="skill">Ubuntu Server</span>
+                    <span class="skill">Windows Server</span>
+                    <span class="skill">TCP/IP</span>
+                    <span class="skill">DNS & DHCP</span>
+                    <span class="skill">VLANs</span>
+                    <span class="skill">Routing & Switching</span>
+                    <span class="skill">PC Hardware</span>
+                    <span class="skill">Troubleshooting</span>
+                    <span class="skill">Docker</span>
+                    <span class="skill">Nginx</span>
+                    <span class="skill">MySQL</span>
+                    <span class="skill">Git & GitHub</span>
+                    <span class="skill">AWS</span>
+                    <span class="skill">VMware</span>
+                    <span class="skill">VirtualBox</span>
+                    <span class="skill">Nmap</span>
+                    <span class="skill">Wireshark</span>
+                    <span class="skill">Tailscale</span>
+                    <span class="skill">pfSense</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="container">
+                <h2>Selected Projects</h2>
+
+                <p class="section-intro">
+                    Practical projects demonstrating my experience
+                    with IT support, hardware, networking,
+                    infrastructure and cybersecurity.
+                </p>
+
+                <div class="projects">
+
+                    <article class="project-card">
+                        <h3>Home Network Infrastructure</h3>
+                        <p>
+                            Designed and implemented a home network
+                            upgrade using Cat6a cabling, network switches
+                            and a TP-Link Omada access point. Achieved
+                            approximately 600 Mbps connectivity.
+                            Exploring network segmentation and VLANs.
+                        </p>
+                        <div class="tech">
+                            Cat6a · Networking · Netgear · Omada · VLANs
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Nextcloud Self-Hosted Server</h3>
+                        <p>
+                            Repurposed an HP ProBook as a self-hosted
+                            cloud server. Deployed Nextcloud using Docker
+                            and configured Tailscale for secure remote
+                            connectivity.
+                        </p>
+                        <div class="tech">
+                            Linux · Docker · Nextcloud · Tailscale
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>DevOps Graduation Project</h3>
+                        <p>
+                            Collaborated with developers and designers
+                            to build a music website. Worked on
+                            infrastructure, AWS, containerized services,
+                            web servers and automated CI/CD pipelines.
+                        </p>
+                        <div class="tech">
+                            AWS · Docker · MySQL · Nginx · Apache · GitHub Actions
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Computer Hardware Refurbishment</h3>
+                        <p>
+                            Upgraded and refurbished multiple laptops.
+                            Performed RAM and SSD upgrades, data backups,
+                            operating system installations and hardware
+                            troubleshooting.
+                        </p>
+                        <div class="tech">
+                            Hardware · Windows · Linux · Diagnostics
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Network Auditing & Security Labs</h3>
+                        <p>
+                            Practiced network discovery and port scanning
+                            with Nmap. Deployed pfSense and Security Onion
+                            virtual machines in an academic cybersecurity lab.
+                        </p>
+                        <div class="tech">
+                            Nmap · pfSense · Security Onion · VirtualBox
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>End-of-Life Hardware Processing</h3>
+                        <p>
+                            Assisted with processing approximately
+                            100 end-of-life Dell OptiPlex computers,
+                            removing and separating RAM and hard drives
+                            for disposal.
+                        </p>
+                        <div class="tech">
+                            Hardware · Component Handling · IT Operations
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <div class="container">
+                <h2>Education & Certifications</h2>
+
+                <div class="info-card">
+                    <h3>Montgomery College</h3>
+                    <p>
+                        Associate of Applied Science (AAS) in Cybersecurity
+                        · Expected 2028
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>CompTIA A+</h3>
+                    <p>Certified</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>CompTIA Network+</h3>
+                    <p>Certified</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Additional Technical Training</h3>
+                    <p>
+                        AWS Academy Cloud Foundations and Cloud Security
+                        Foundations · Cisco CCNA: Introduction to Networks
+                        · IT Fundamentals and DevOps Foundations
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+
+                <p class="section-intro">
+                    Interested in IT Support, Help Desk, networking
+                    and infrastructure opportunities.
+                </p>
+
+                <p>
+                    GitHub:
+                    <a href="https://github.com/mixder" target="_blank">
+                        github.com/mixder
+                    </a>
+                </p>
+
+                <!-- Add your LinkedIn and professional email here later -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Vladyslav Kurylenko · IT Portfolio · 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
