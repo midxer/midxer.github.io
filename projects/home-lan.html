@@ -1,1 +1,581 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home LAN Infrastructure | Vladyslav Kurylenko</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #7dd3fc;
+        }
+
+        header {
+            background: #111c31;
+            border-bottom: 1px solid #263449;
+            padding: 22px 8%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #f8fafc;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .back-link {
+            font-size: 14px;
+        }
+
+        .hero {
+            padding: 75px 8% 60px;
+            background: linear-gradient(135deg, #17263e, #0f172a);
+            border-bottom: 1px solid #263449;
+        }
+
+        .eyebrow {
+            color: #38bdf8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #f8fafc;
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .tag {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #bae6fd;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 50px 25px 80px;
+        }
+
+        section {
+            margin-bottom: 65px;
+            scroll-margin-top: 25px;
+        }
+
+        .section-number {
+            color: #38bdf8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            color: #f8fafc;
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 22px;
+            color: #cbd5e1;
+            margin: 15px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .info-card {
+            background: #172338;
+            border: 1px solid #2b3b53;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        figure {
+            background: #172338;
+            border: 1px solid #2b3b53;
+            border-radius: 9px;
+            overflow: hidden;
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            height: 230px;
+            object-fit: contain;
+            background: #0b1220;
+        }
+
+        figcaption {
+            padding: 15px;
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+
+        .status {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 9px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .completed {
+            color: #86efac;
+            background: #123324;
+        }
+
+        .planned {
+            color: #fcd34d;
+            background: #3b2d13;
+        }
+
+        .video-container {
+            margin-top: 25px;
+            background: #172338;
+            border: 1px solid #2b3b53;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            border-radius: 6px;
+            background: #000;
+        }
+
+        .video-caption {
+            margin-top: 12px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        .notice {
+            border-left: 3px solid #eab308;
+            background: #292414;
+            padding: 18px 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .notice p {
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #263449;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            .hero {
+                padding: 55px 6% 45px;
+            }
+
+            main {
+                padding: 40px 18px 60px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">IT Infrastructure Portfolio</div>
+        <a class="back-link" href="../index.html">← Back to Portfolio</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="eyebrow">Infrastructure Project 02</div>
+
+    <h1>Home LAN Infrastructure</h1>
+
+    <p>
+        Design, physical installation, and expansion of a residential
+        wired and wireless network. This project documents hands-on
+        experience with Ethernet cabling, network equipment,
+        wireless access points, and network administration.
+    </p>
+
+    <div class="project-meta">
+        <span class="tag">Ethernet Cabling</span>
+        <span class="tag">TCP/IP Networking</span>
+        <span class="tag">Managed Switching</span>
+        <span class="tag">Wireless Networking</span>
+        <span class="tag">Network Administration</span>
+    </div>
+</div>
+
+<main>
+
+    <!-- 01 PROJECT OVERVIEW -->
+    <section>
+        <div class="section-number">01 / OVERVIEW</div>
+        <h2>Project Overview</h2>
+
+        <p>
+            This project involved expanding and improving my home
+            network infrastructure through physical Ethernet cabling
+            and the installation of networking equipment.
+        </p>
+
+        <p>
+            The objective was to establish reliable wired connectivity
+            between devices, improve wireless coverage, and gain
+            practical experience working with real networking hardware.
+        </p>
+
+        <div class="info-card">
+            <h3>Project Objectives</h3>
+            <ul>
+                <li>Install physical Ethernet cabling throughout the home.</li>
+                <li>Establish wired connections between workstations and network equipment.</li>
+                <li>Deploy a managed network switch.</li>
+                <li>Install and configure a TP-Link Omada wireless access point.</li>
+                <li>Document network equipment and configuration.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 02 PHYSICAL CABLING -->
+    <section>
+        <div class="section-number">02 / PHYSICAL INFRASTRUCTURE</div>
+        <h2>Ethernet Cabling Installation</h2>
+
+        <span class="status completed">Completed work</span>
+
+        <p>
+            I installed approximately 250 feet of Cat6a Ethernet cable
+            to extend wired network connectivity between different
+            areas of the home.
+        </p>
+
+        <p>
+            The work included planning cable routes, handling the
+            physical installation, and preparing Ethernet cable
+            connections using crimping tools.
+        </p>
+
+        <div class="gallery">
+
+            <figure>
+                <img
+                    src="../images/home-lan/Cable.jpg"
+                    alt="Ethernet cable used for the installation"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Cat6a Ethernet cable used for the home network installation.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img
+                    src="../images/home-lan/Crimping-tool-set.jpg"
+                    alt="Ethernet cable crimping tools"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Crimping tools and equipment used for cable preparation.
+                </figcaption>
+            </figure>
+
+        </div>
+
+        <div class="video-container">
+            <h3>Physical Cable Installation Walkthrough</h3>
+
+            <video controls preload="metadata">
+                <source
+                    src="../images/home-lan/home-network-walkthrough.mp4"
+                    type="video/mp4"
+                >
+                Your browser does not support video playback.
+            </video>
+
+            <p class="video-caption">
+                A walkthrough from the workstation to the network switch,
+                demonstrating the physical cable route and installation.
+            </p>
+        </div>
+    </section>
+
+    <!-- 03 NETWORK EQUIPMENT -->
+    <section>
+        <div class="section-number">03 / NETWORK EQUIPMENT</div>
+        <h2>Switching and Network Hardware</h2>
+
+        <span class="status completed">Completed work</span>
+
+        <p>
+            The network infrastructure was expanded with additional
+            switching equipment to provide wired connectivity for
+            connected devices.
+        </p>
+
+        <p>
+            The project also involved moving beyond a basic unmanaged
+            switching setup toward managed network equipment.
+        </p>
+
+        <div class="gallery">
+
+            <figure>
+                <img
+                    src="../images/home-lan/Unmanaged-SW.jpg"
+                    alt="Unmanaged network switch"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Earlier unmanaged switching equipment used in the home network.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img
+                    src="../images/home-lan/Managed-SW-box.jpg"
+                    alt="Managed network switch packaging"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Managed switch equipment acquired for the network upgrade.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img
+                    src="../images/home-lan/Sw-Oct2026.jpg"
+                    alt="Network switch installed in October 2026"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Network switch installation and physical network setup.
+                </figcaption>
+            </figure>
+
+        </div>
+    </section>
+
+    <!-- 04 WIRELESS NETWORK -->
+    <section>
+        <div class="section-number">04 / WIRELESS NETWORK</div>
+        <h2>Wireless Access Point</h2>
+
+        <span class="status completed">Completed work</span>
+
+        <p>
+            A TP-Link Omada wireless access point was deployed to
+            expand wireless network coverage and provide additional
+            flexibility for connected devices.
+        </p>
+
+        <div class="gallery">
+
+            <figure>
+                <img
+                    src="../images/home-lan/Omada-AP.png"
+                    alt="TP-Link Omada wireless access point"
+                    loading="lazy"
+                >
+                <figcaption>
+                    TP-Link Omada wireless access point used in the home network.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img
+                    src="../images/home-lan/FiOS-router.png"
+                    alt="FiOS router"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Existing ISP-provided FiOS router.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img
+                    src="../images/home-lan/router interface.png"
+                    alt="Router administration interface"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Network administration interface used for configuration and management.
+                </figcaption>
+            </figure>
+
+        </div>
+    </section>
+
+    <!-- 05 FUTURE IMPROVEMENTS -->
+    <section>
+        <div class="section-number">05 / FUTURE DEVELOPMENT</div>
+        <h2>Planned Network Upgrade</h2>
+
+        <span class="status planned">Not yet deployed</span>
+
+        <p>
+            A new router has been acquired for a future infrastructure
+            upgrade. Installation and configuration are still pending.
+        </p>
+
+        <div class="gallery">
+            <figure>
+                <img
+                    src="../images/home-lan/New-router.jpg"
+                    alt="New router acquired for a future network upgrade"
+                    loading="lazy"
+                >
+                <figcaption>
+                    New router acquired for the planned network upgrade.
+                    Installation and configuration have not yet been completed.
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="notice">
+            <p>
+                <strong>Future work:</strong> Router deployment,
+                configuration, and integration into the existing
+                home network will be documented after implementation.
+            </p>
+        </div>
+    </section>
+
+    <!-- 06 RESULTS AND LEARNING -->
+    <section>
+        <div class="section-number">06 / RESULTS</div>
+        <h2>Skills and Practical Experience</h2>
+
+        <p>
+            This project provided practical experience with the
+            physical and logical components of residential network
+            infrastructure.
+        </p>
+
+        <div class="info-card">
+            <h3>Technical Skills Demonstrated</h3>
+
+            <ul>
+                <li>Ethernet cabling installation and cable preparation.</li>
+                <li>Physical network infrastructure deployment.</li>
+                <li>Network switch installation.</li>
+                <li>Managed and unmanaged switching concepts.</li>
+                <li>Wireless access point deployment.</li>
+                <li>Router administration and network configuration.</li>
+                <li>Network troubleshooting and documentation.</li>
+            </ul>
+        </div>
+
+        <p style="margin-top: 25px;">
+            The network remains an ongoing personal infrastructure
+            project. Future improvements will be documented as
+            additional equipment is installed and configured.
+        </p>
+    </section>
+
+    <p>
+        <a href="../index.html">← Return to Main Portfolio</a>
+        &nbsp; | &nbsp;
+        <a href="nextcloud.html">View Nextcloud Project →</a>
+    </p>
+
+</main>
+
+<footer>
+    <p>Vladyslav Kurylenko | IT Infrastructure Portfolio</p>
+</footer>
+
+</body>
+</html>
+
