@@ -131,14 +131,34 @@
             font-size: 13px;
         }
 
-        .placeholder {
+        .project-gallery {
+            margin-top: 35px;
+        }
+
+        .project-gallery > p {
+            color: #aab7ca;
+            margin-bottom: 20px;
+        }
+
+        .project-gallery figure {
             background: #172337;
-            border: 1px dashed #48617e;
+            border: 1px solid #293b55;
             border-radius: 9px;
-            padding: 45px 20px;
-            text-align: center;
-            color: #94a3b8;
-            margin-top: 15px;
+            padding: 18px;
+            margin-top: 25px;
+        }
+
+        .project-gallery img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .project-gallery figcaption {
+            color: #aab7ca;
+            font-size: 14px;
+            margin-top: 12px;
         }
 
         .button {
@@ -169,6 +189,14 @@
                 gap: 12px;
                 flex-wrap: wrap;
             }
+
+            .hero {
+                padding: 50px 0 40px;
+            }
+
+            .project-gallery figure {
+                padding: 12px;
+            }
         }
     </style>
 </head>
@@ -179,6 +207,7 @@
         <div class="container">
             <nav>
                 <div class="logo">VK. | IT Portfolio</div>
+
                 <a class="back-link" href="../index.html">
                     ← Back to Portfolio
                 </a>
@@ -263,16 +292,56 @@
                         remote connectivity to the server.
                     </p>
                 </div>
+            </div>
+        </section>
 
-                <div class="placeholder">
-                    Project screenshots will be added here.
-                </div>
+        <section class="project-gallery">
+            <div class="container">
+                <h2>04. Project Documentation</h2>
+
+                <p>
+                    Hardware and deployment evidence from my
+                    self-hosted Nextcloud project.
+                </p>
+
+                <figure>
+                    <img
+                        src="../images/nextcloud/probook-interior.png"
+                        alt="Internal hardware of HP ProBook 470 G1">
+
+                    <figcaption>
+                        HP ProBook 470 G1 — hardware used for the
+                        self-hosted server.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="../images/nextcloud/Screenshot%20at%202026-11-09%2022-45-51.png"
+                        alt="Nextcloud project screenshot">
+
+                    <figcaption>
+                        Nextcloud server — project configuration
+                        and management.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="../images/nextcloud/Screenshot%20at%202026-11-09%2022-46-56.png"
+                        alt="Nextcloud deployment screenshot">
+
+                    <figcaption>
+                        Nextcloud deployment — additional
+                        technical evidence.
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
         <section>
             <div class="container">
-                <h2>04. Results & Lessons Learned</h2>
+                <h2>05. Results & Lessons Learned</h2>
 
                 <div class="content">
                     <p>
