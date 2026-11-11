@@ -1,1 +1,705 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SoundStorm | Cloud Infrastructure & DevOps</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #7dd3fc;
+        }
+
+        header {
+            background: #111c31;
+            border-bottom: 1px solid #263449;
+            padding: 22px 8%;
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .back-link {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            max-width: 1100px;
+            margin: auto;
+            padding: 75px 25px 65px;
+        }
+
+        .eyebrow {
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #f8fafc;
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero-description {
+            max-width: 750px;
+            color: #a8b6ca;
+            font-size: 18px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .tag {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #bae6fd;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 25px 70px;
+        }
+
+        section {
+            margin-bottom: 65px;
+            scroll-margin-top: 25px;
+        }
+
+        .section-number {
+            color: #38bdf8;
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            color: #f8fafc;
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        h3 {
+            color: #f1f5f9;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #b8c5d6;
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .info-card {
+            background: #172337;
+            border: 1px solid #2b3b52;
+            border-radius: 9px;
+            padding: 22px;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .content-card {
+            background: #172337;
+            border: 1px solid #2b3b52;
+            border-radius: 9px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 22px;
+            color: #b8c5d6;
+            margin: 12px 0;
+        }
+
+        li {
+            margin-bottom: 9px;
+        }
+
+        .architecture {
+            background: #111c31;
+            border: 1px solid #334155;
+            border-radius: 9px;
+            padding: 25px;
+            margin-top: 22px;
+        }
+
+        .architecture-flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .architecture-item {
+            background: #1e293b;
+            border: 1px solid #475569;
+            border-radius: 7px;
+            padding: 13px 16px;
+            text-align: center;
+            color: #e0f2fe;
+            font-size: 14px;
+        }
+
+        .architecture-arrow {
+            color: #38bdf8;
+            font-size: 20px;
+        }
+
+        .note {
+            border-left: 3px solid #38bdf8;
+            background: #172337;
+            padding: 16px 20px;
+            margin-top: 20px;
+            border-radius: 0 7px 7px 0;
+            color: #cbd5e1;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .gallery-item {
+            background: #172337;
+            border: 1px solid #2b3b52;
+            border-radius: 9px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 430px;
+            object-fit: contain;
+            background: #0b1220;
+        }
+
+        .gallery-caption {
+            padding: 17px;
+        }
+
+        .gallery-caption h3 {
+            font-size: 16px;
+        }
+
+        .gallery-caption p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 17px;
+            background: #075985;
+            color: #f0f9ff;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            background: #0369a1;
+            color: white;
+        }
+
+        .footer {
+            border-top: 1px solid #263449;
+            background: #111c31;
+            text-align: center;
+            padding: 30px 20px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+
+            .info-grid,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .architecture-flow {
+                flex-direction: column;
+            }
+
+            .architecture-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <a class="back-link" href="../index.html">
+            ← Back to Portfolio
+        </a>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="eyebrow">Cloud Infrastructure / DevOps</div>
+
+    <h1>SoundStorm — Cloud Deployment & CI/CD</h1>
+
+    <p class="hero-description">
+        A team graduation project involving cloud infrastructure,
+        containerized services, web server configuration, and
+        automated deployment pipelines using AWS, Docker, and GitHub Actions.
+    </p>
+
+    <div class="hero-tags">
+        <span class="tag">AWS EC2</span>
+        <span class="tag">IaaS</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Docker Compose</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Nginx</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">CI/CD</span>
+    </div>
+</div>
+
+<main>
+
+    <!-- 01 PROJECT OVERVIEW -->
+
+    <section>
+        <div class="section-number">01 — PROJECT OVERVIEW</div>
+        <h2>About the Project</h2>
+
+        <p>
+            SoundStorm was a graduation project developed by a
+            seven-person team consisting of developers, designers,
+            and infrastructure contributors.
+        </p>
+
+        <p>
+            I worked closely with another graduating colleague on
+            the DevOps and infrastructure side of the project.
+            Together, we worked on the deployment environment,
+            cloud infrastructure, domain setup, containerization,
+            and CI/CD pipeline implementation.
+        </p>
+
+        <p>
+            The work covered the process from initial infrastructure
+            preparation and domain registration through application
+            deployment and automated pipeline builds.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="info-card">
+                <h3>Team</h3>
+                <p>Seven-person graduation project. DevOps responsibilities shared with one colleague.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Cloud Infrastructure</h3>
+                <p>AWS EC2 virtual machine instances providing computing resources.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Main Focus</h3>
+                <p>Infrastructure setup, container deployment, web services, and CI/CD automation.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 02 INFRASTRUCTURE -->
+
+    <section>
+        <div class="section-number">02 — CLOUD INFRASTRUCTURE</div>
+        <h2>AWS EC2 — IaaS Deployment</h2>
+
+        <p>
+            AWS EC2 was used to provide the computing infrastructure
+            for the project. This is an Infrastructure as a Service
+            (IaaS) deployment model.
+        </p>
+
+        <p>
+            Instead of relying on a fully managed application platform,
+            we worked with virtual server instances and configured
+            the software environment required to run the application.
+        </p>
+
+        <div class="content-card">
+            <h3>Infrastructure responsibilities</h3>
+
+            <ul>
+                <li>Working with AWS EC2 computing instances.</li>
+                <li>Preparing the server environment for application deployment.</li>
+                <li>Configuring the domain and DNS-related setup.</li>
+                <li>Coordinating infrastructure requirements with the development team.</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            <strong>Service model:</strong> AWS EC2 provided the underlying
+            virtual computing infrastructure. The team handled the
+            application deployment stack running on top of it.
+        </div>
+    </section>
+
+
+    <!-- 03 DOCKER -->
+
+    <section>
+        <div class="section-number">03 — CONTAINERIZATION</div>
+        <h2>Docker & Docker Compose</h2>
+
+        <p>
+            Docker was used to package and run application services
+            in containers. Docker Compose helped define and coordinate
+            the services required by the deployment environment.
+        </p>
+
+        <p>
+            Developing the Docker Compose configuration was one of
+            the practical challenges of the project. We had limited
+            previous experience with scripting and infrastructure
+            configuration, so much of the process involved learning
+            the syntax, understanding service dependencies, and
+            investigating errors during deployment.
+        </p>
+
+        <div class="content-card">
+            <h3>Technologies involved</h3>
+
+            <ul>
+                <li>Docker container management.</li>
+                <li>Docker Compose configuration using docker-compose.yml.</li>
+                <li>MySQL database service.</li>
+                <li>Nginx reverse proxy configuration.</li>
+                <li>Apache web server.</li>
+            </ul>
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <img
+                    src="../images/soundstorm/Docker-hub.jpg"
+                    alt="Docker Hub project image or repository"
+                    loading="lazy"
+                >
+                <div class="gallery-caption">
+                    <h3>Docker Hub</h3>
+                    <p>
+                        Docker-related project image and repository evidence.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="../images/soundstorm/screen-of-docker-containers.jpg"
+                    alt="Docker containers running for the SoundStorm project"
+                    loading="lazy"
+                >
+                <div class="gallery-caption">
+                    <h3>Running Containers</h3>
+                    <p>
+                        Screenshot documenting the containerized
+                        application environment.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 04 CI/CD -->
+
+    <section>
+        <div class="section-number">04 — AUTOMATION</div>
+        <h2>GitHub Actions & CI/CD</h2>
+
+        <p>
+            GitHub Actions was used to build the project's automated
+            pipeline. The objective was to connect repository activity
+            with the build and deployment workflow.
+        </p>
+
+        <p>
+            Implementing the pipeline required understanding how
+            workflow configuration, Docker services, and the deployment
+            environment interacted with each other.
+        </p>
+
+        <div class="content-card">
+            <h3>What we worked on</h3>
+
+            <ul>
+                <li>GitHub repository and project workflow setup.</li>
+                <li>GitHub Actions workflow configuration.</li>
+                <li>Pipeline builds and execution.</li>
+                <li>Investigating failed workflow runs and configuration errors.</li>
+                <li>Adjusting configurations and testing subsequent builds.</li>
+            </ul>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item full-width">
+                <img
+                    src="../images/soundstorm/pipeline-screen.jpg"
+                    alt="GitHub Actions pipeline screenshot"
+                    loading="lazy"
+                >
+                <div class="gallery-caption">
+                    <h3>CI/CD Pipeline</h3>
+                    <p>
+                        GitHub Actions workflow evidence from the
+                        SoundStorm project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 05 DEVELOPMENT JOURNEY -->
+
+    <section>
+        <div class="section-number">05 — DEVELOPMENT JOURNEY</div>
+        <h2>From First Deployment to Working Application</h2>
+
+        <p>
+            The project evolved through multiple development and
+            deployment stages. The first successful deployment
+            was very basic, but it marked an important milestone:
+            getting the initial website served through our infrastructure.
+        </p>
+
+        <p>
+            As development continued, the application and deployment
+            environment became more complete through collaboration
+            between the development and infrastructure sides of the team.
+        </p>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <img
+                    src="../images/soundstorm/beginning-soundstorm.jpg"
+                    alt="First basic SoundStorm deployment"
+                    loading="lazy"
+                >
+                <div class="gallery-caption">
+                    <h3>First Deployment</h3>
+                    <p>
+                        The initial, minimal website deployment.
+                        A starting point for testing the infrastructure.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="../images/soundstorm/soundstorm-1.jpg"
+                    alt="SoundStorm application screenshot"
+                    loading="lazy"
+                >
+                <div class="gallery-caption">
+                    <h3>Application Development</h3>
+                    <p>
+                        A later stage of the SoundStorm application.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-item full-width">
+                <img
+                    src="../images/soundstorm/soundstorm-2.jpg"
+                    alt="SoundStorm website working interface"
+                    loading="lazy"
+                >
+                <div class="gallery-caption">
+                    <h3>Working Application</h3>
+                    <p>
+                        Application interface during the later
+                        stages of project development.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <a
+            class="project-link"
+            href="https://soundstorm.pp.ua/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Visit SoundStorm Website ↗
+        </a>
+    </section>
+
+
+    <!-- 06 TROUBLESHOOTING -->
+
+    <section>
+        <div class="section-number">06 — TROUBLESHOOTING & LEARNING</div>
+        <h2>Learning Through Implementation</h2>
+
+        <p>
+            One of the biggest challenges was that we were learning
+            several technologies while building the deployment
+            environment. Neither of us started with extensive
+            scripting or programming experience.
+        </p>
+
+        <p>
+            AI-assisted tools helped us generate initial configuration
+            examples and code. However, generated configurations did
+            not always work as expected.
+        </p>
+
+        <p>
+            We had to investigate errors, understand configuration
+            problems, modify files, and rerun builds when Docker
+            deployments or CI/CD pipelines failed.
+        </p>
+
+        <div class="content-card">
+            <h3>Practical experience gained</h3>
+
+            <ul>
+                <li>Understanding how cloud infrastructure supports application deployment.</li>
+                <li>Working with Docker and multi-service Compose configurations.</li>
+                <li>Understanding relationships between web servers, databases, and containers.</li>
+                <li>Building and troubleshooting GitHub Actions workflows.</li>
+                <li>Investigating configuration errors and deployment failures.</li>
+                <li>Collaborating with developers and designers in a seven-person team.</li>
+                <li>Using AI-generated configuration as a starting point and validating the results.</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            This was a learning-oriented team project. The infrastructure
+            and DevOps work was shared with a colleague, while the
+            application itself was developed collaboratively by the team.
+        </div>
+    </section>
+
+
+    <!-- 07 PROJECT SUMMARY -->
+
+    <section>
+        <div class="section-number">07 — PROJECT SUMMARY</div>
+        <h2>What This Project Demonstrates</h2>
+
+        <p>
+            SoundStorm provided practical exposure to cloud computing,
+            infrastructure configuration, containerized deployment,
+            and CI/CD automation.
+        </p>
+
+        <p>
+            It also provided experience working through real
+            configuration and deployment problems in a collaborative
+            technical environment.
+        </p>
+
+        <div class="content-card">
+            <h3>Technologies and tools</h3>
+
+            <p>
+                AWS EC2 · Docker · Docker Compose · Docker Hub ·
+                MySQL · Nginx · Apache · Git · GitHub · GitHub Actions ·
+                DNS · CI/CD
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>
+        SoundStorm Cloud Infrastructure & DevOps Case Study
+    </p>
+    <a href="../index.html">← Return to Portfolio</a>
+</footer>
+
+</body>
+</html>
+
